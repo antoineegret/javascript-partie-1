@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice_5</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <form>
+    <label for="firstNumber">Premier nombre : </label><input type="text" id="firstNumber" name="firstNumber"/><br/>
+    <label for="secondNumber">Deuxième nombre : </label><input type="text" id="secondNumber" name="secondNumber"/><br/>
+    <button  id="submit" name ="submit">Valider</button>
+  </form>
+  <script>
+
+  var submitButton = document.getElementById('submit'); // Déclare la variable et lui attribue l'id submit
+  submitButton.onclick = function() // "Si l'on clique sur submit"
+  {
+    var firstNumber = document.getElementById("firstNumber").value; // Récupere la valeur du champ firstNumber dans le fomulaire
+    var secondNumber = document.getElementById("secondNumber").value; // Récupere la valeur du champ secondNumber dans le fomulaire
+    if(firstNumber && secondNumber != '') { // "Si firstNumber et secondNumber ne sont pas vides"
+    if (isNaN(firstNumber) || isNaN(secondNumber)) { // "Si firstNumber OU secondNumber ne sont pas des chiffres"
+    alert('Merci de saisir des chiffres');
+  } // la commande isNaN et la pour s'assurer que le caractére remplie son bien des nombre et donc il affiche l'alert merci de saisir des chiffres
+  else {
+    firstNumber = Math.floor(firstNumber) // Arrondir le chiffre contenu dans la variable au chiffre inférieur grace a la commande math.floor
+    secondNumber = Math.floor(secondNumber)
+    var resultat =  (firstNumber * secondNumber)// * mutiplie fisrtnumber et secondNumber
+    alert('Le resultat de ' + firstNumber + ' * ' +  secondNumber + ' = '+ resultat);
+  }
+}
+else {
+  alert('Merci de remplir tous les champs');
+}
+}
+</script>
+</body>
+</html>
